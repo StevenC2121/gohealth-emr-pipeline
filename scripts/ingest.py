@@ -101,6 +101,9 @@ def main():
             f.write(orphaned.to_string(index=False))
             f.write('\n')
 
+    # Proposed drop of PHI information
+    # patients_df.drop(columns=['address', 'phone', 'first_name', 'last_name'], inplace=True)
+    
     # Save cleaned data to CSV
     patients_df.to_csv(OUTPUT_DIR / 'patients_clean.csv', index=False, na_rep='null')
     visits_df.to_csv(OUTPUT_DIR / 'visits_clean.csv', index=False, na_rep='null')
